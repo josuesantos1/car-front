@@ -116,7 +116,7 @@ export default function Cars() {
             <input onChange={(e) => setBrand(e.target.value)} value={brand} placeholder='brand'/>
             <input onChange={(e) => setModel(e.target.value)} value={model} placeholder='model'/>
             <input onChange={(e) => handleUploadFile(e)} type='file' />
-            <input onChange={(e) => setPrice(e.target.value)} value={price} placeholder='price'/>
+            <input onChange={(e) => setPrice(e.target.value)} type='number' value={price} placeholder='price'/>
         </div>
         <div className={styles.btns}>
           <button onClick={handleClick} className={styles.btn_save}>save</button>
