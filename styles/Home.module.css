@@ -66,7 +66,9 @@
 }
 
 .grid {
-  display: flex;
+  display: grid;
+  gap: 50px 10px;
+  grid-template-columns: auto auto auto auto;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -82,7 +84,7 @@
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+  max-width: 350px;
 }
 
 .card:hover,
