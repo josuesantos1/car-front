@@ -4,10 +4,12 @@ import axios from 'axios'
 
 import styles from '../../styles/Home.module.css'
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 export default function Admin() {
   const [cars, setCars ] = useState([])
 
+  const route = useRouter()
   useEffect(() => {
     axios.get(`${process.env.API_URL}/cars/?me=True`,{
       headers: {
@@ -24,6 +26,10 @@ export default function Admin() {
       console.log("error", e)
     });
   }, [])
+
+  const handleNewCar = () => {
+    route.push('/admin/cars')
+  }
 
   return (
     <div className={styles.container}>
@@ -49,7 +55,7 @@ export default function Admin() {
         </div>
       </main>
       <footer className={styles.footer}>
-        <button className={styles.btn_new}>novo carro</button>
+        <button onClick={handleNewCar} className={styles.btn_new}>novo carro</button>
       </footer>
     </div>
   )
