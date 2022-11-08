@@ -108,6 +108,61 @@
   margin-left: 0.5rem;
 }
 
+.list_cars {
+  height: 82vh;
+  padding: 1rem;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.list_cars .car_content {
+  height: 20vh;
+  width: 100%;
+
+  border:1px solid #0070f3;
+  border-radius: 1rem;
+
+  margin: 2rem 0;
+  padding: 1rem;
+}
+
+.list_cars .car_grid {
+  display: flex;
+}
+
+.list_cars .car_grid * {
+  padding: 1em;
+}
+
+.btn_new {
+  padding:0.7rem 2rem;
+
+  background: #15a080;
+  border:1px solid #15a080;
+  color: #fff;
+}
+
+.btn_new:hover {
+  background: #fff;
+  border:1px solid #15a080;
+  color: #15a080;
+}
+
+.btn_cancel {
+  background: #ffd813;
+  color: #fff;
+  border: 0.2rem solid  #ffd813;
+
+  padding: 0.5rem 2rem;
+}
+
+.btn_cancel:hover {
+  background: #fff;
+  color: #ffd813;
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
