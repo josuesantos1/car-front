@@ -15,6 +15,21 @@ a {
   box-sizing: border-box;
 }
 
+button {
+  color: #15a080;
+  background: #fff;
+  border: 0.2rem solid #15a080;
+  margin: 1rem 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+button:hover {
+  color: #fff;
+  background: #15a080;
+  border: 0.2rem solid #fff;
+  cursor: pointer;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
