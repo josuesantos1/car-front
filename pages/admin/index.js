@@ -5,12 +5,15 @@ import axios from 'axios'
 import styles from '../../styles/Home.module.css'
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export default function Admin() {
   const [cars, setCars ] = useState([])
 
   const route = useRouter()
+
   useEffect(() => {
+  
     axios.get(`${process.env.API_URL}/cars/?me=True`,{
       headers: {
         Authorization: `Bearer ${window.localStorage.getItem('token')}`
@@ -24,11 +27,19 @@ export default function Admin() {
       }       
     }).catch(e => {
       console.log("error", e)
+      if (e.response?.status == 401) {
+        route.push('/')
+      }
     });
   }, [])
 
   const handleNewCar = () => {
     route.push('/admin/cars')
+  }
+
+  const handleLogUot = () => {
+    window.localStorage.removeItem('token')
+    route.push('/')
   }
 
   return (
@@ -41,21 +52,24 @@ export default function Admin() {
       <main className={styles.container}>
         <div className={styles.list_cars}>
             {cars.map(car => {
-                return <div>
+                return <Link href={`/admin/cars?id=${car.slug}`}>
+                  <div className={styles.car_content}>
                     <strong>{car.name}</strong>
                     <div className={styles.car_grid}>
                       <p>marca: {car.brand}</p>
                       <p>modelo: {car.model}</p>
                       <p>slug: {car.slug}</p>
                       <p>preco: {car.price}</p>
-                      <Image src={car.photo} width='150' height='100'/>
+                      {/* <Image src={car?.photo} width='100' height='100' /> */}
                     </div>
-                </div>
+                  </div>                
+                </Link>
             })}
         </div>
       </main>
       <footer className={styles.footer}>
         <button onClick={handleNewCar} className={styles.btn_new}>novo carro</button>
+        <button onClick={handleLogUot} className={styles.btn_cancel}>loguot</button>
       </footer>
     </div>
   )
