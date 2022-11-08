@@ -41,7 +41,7 @@ export default function Signup() {
       <main className={styles.container_login}>
         <div className={styles.login}>
             <input onChange={(e) => setName(e.target.value)} placeholder='name'/>
-            <input onChange={(e) => setEmail(e.target.value)} placeholder='e-mail'/>
+            <input onChange={(e) => setEmail(e.target.value)} type='email' placeholder='e-mail'/>
             <input onChange={(e) => setPassword(e.target.value)} type='password' placeholder='password'/>
             <button onClick={handleClick}>sign up</button>
         </div>
