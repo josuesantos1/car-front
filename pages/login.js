@@ -38,8 +38,8 @@ export default function Login() {
       </Head>
       <main className={styles.container_login}>
         <div className={styles.login}>
-            <input onChange={(e) => setEmail(e.target.value)} placeholder='e-mail'/>
-            <input onChange={(e) => setPassword(e.target.value)} placeholder='password'/>
+            <input onChange={(e) => setEmail(e.target.value)} type='email' placeholder='e-mail'/>
+            <input onChange={(e) => setPassword(e.target.value)} type='password' placeholder='password'/>
             <button onClick={handleClick}>login</button>
         </div>
       </main>
