@@ -42,6 +42,9 @@ export default function Home() {
         <div className={styles.btn_sign} >
           <Link href='/signup'>SignUp</Link>
         </div>
+        <div className={styles.btn_sign} >
+          <Link href='/admin'>admin</Link>
+        </div>
       </header>
 
       <main className={styles.main}>
