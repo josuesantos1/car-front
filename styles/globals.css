@@ -15,7 +15,7 @@ a {
   box-sizing: border-box;
 }
 
-button {
+.btn_sign {
   color: #15a080;
   background: #fff;
   border: 0.2rem solid #15a080;
@@ -23,7 +23,7 @@ button {
   padding: 0.5rem 1rem;
 }
 
-button:hover {
+.btn_sign:hover {
   color: #fff;
   background: #15a080;
   border: 0.2rem solid #fff;
